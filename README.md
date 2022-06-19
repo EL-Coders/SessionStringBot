@@ -1,8 +1,8 @@
-# Pyrogram and Telethon String Session Bot [@StarkStringGenBot](https://t.me/StarkStringGenBot)
+# Pyrogram and Telethon String Session Bot [@SessionStringELBot](https://t.me/SessionStringELBot)
 
 > A star ⭐ from you means a lot to us!
 
-<p align="center"><a href="https://www.github.com/StarkBotsIndustries/StringSessionBot"><img src="https://telegra.ph/file/7ec22c82f580a334dd13e.jpg" width="2000"></a></p>
+<p align="center"><a href="https://github.com/EL-Coders/SessionStringBot"><img src="https://telegra.ph/file/7ec22c82f580a334dd13e.jpg" width="2000"></a></p>
 
 Telegram bot to generate pyrogram and telethon string session.
 
@@ -12,7 +12,7 @@ Telegram bot to generate pyrogram and telethon string session.
 
 ### Deploy to Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/StarkBotsIndustries/StringSessionBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/)
 
 1. Tap on above button and fill `API_ID`, `API_HASH`, `BOT_TOKEN` (and `MUST_JOIN`).
 2. Then tap "Deploy App" below it. Wait till deploying is complete (will take atmost 2 minutes).
@@ -25,7 +25,7 @@ Telegram bot to generate pyrogram and telethon string session.
    ```markdown
    git clone https://github.com/StarkBotsIndustries/StringSessionBot
    ```
-2. Get a DATABASE_URL. If you don't know how, deploy using Heroku Button only or delete database things as it's not a compulsion.
+2. Get a DB_URI. If you don't know how, deploy using Heroku Button only or delete database things as it's not a compulsion.
    
 3. Rename `.env.sample` to `.env` and fill the needed variables
 
@@ -45,8 +45,9 @@ Telegram bot to generate pyrogram and telethon string session.
 - `API_ID` - Get this from [my.telegram.org](https://my.telegram.org/auth)
 - `API_HASH` - Get this from [my.telegram.org](https://my.telegram.org/auth)
 - `BOT_TOKEN` - Get this from [@BotFather](https://t.me/BotFather)
-- `DATABASE_URL` - Will be automatically added by Heroku.
+- `DB_URI` - Will be automatically added by Heroku.
 - `MUST_JOIN` - Username/ID of your telegram channel/group.
+- `AUTH_USERS` - ID of users which will be able to broadcast.
 
 ## Functions
 
@@ -61,19 +62,19 @@ Telegram bot to generate pyrogram and telethon string session.
 ## Credits
 
 - [Dan Tès](https://github.com/delivrance) for his [Pyrogram](https://docs.pyrogram.org) Library
-- [Lonami](https://github.com/Lonami) for his [Telethon](https://docs.telethon.dev) Library 
-- [aylak](https://t.me/ayIak) for **Telethon** idea of [v1.0.0](https://github.com/StarkBotsIndustries/StringSessionBot/commit/48e06bb6d9ed156797ef4bc0dab88820fef948f3)
+- [Lonami](https://github.com/Lonami) for his [Telethon](https://docs.telethon.dev) Library
+- [aylak](https://t.me/ayIak) for **Telethon** idea of [v1.0.0]
 
 ## Support
 
-Channel :- [@StarkBots](https://t.me/StarkBots)
+Channel :- [@ELUpdates](https://t.me/ELUpdates)
 
-Group Chat :- [@StarkBotsChat](https://t.me/StarkBotsChat)
+Group Chat :- [@ELSupport](https://t.me/ELSupport)
 
 ## :)
 
 [![ForTheBadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/StarkBotsIndustries)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/EL-Coders)
 
-[![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://github.com/StarkBotsIndustries)
+[![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)](https://github.com/EL-Coders)
