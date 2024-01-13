@@ -22,6 +22,9 @@ from pyrogram1.errors import (
     SessionPasswordNeeded as SessionPasswordNeeded1,
     PasswordHashInvalid as PasswordHashInvalid1
 )
+from pyrogram1.errors.exceptions.bad_request_400 import PhoneNumberBanned as PhoneNumberBanned1
+from pyrogram.errors.exceptions.bad_request_400 import PhoneNumberBanned
+
 from telethon.errors import (
     ApiIdInvalidError,
     PhoneNumberInvalidError,
@@ -109,6 +112,9 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         return
     except (PhoneNumberInvalid, PhoneNumberInvalidError, PhoneNumberInvalid1):
         await msg.reply('`PHONE_NUMBER` is invalid. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        return
+    except (PhoneNumberBanned1, PhoneNumberBanned):
+        await msg.reply('`PHONE_NUMBER` is banned, please try with another number.')
         return
     try:
         phone_code_msg = None
