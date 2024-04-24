@@ -25,7 +25,7 @@ Telegram bot to generate pyrogram and telethon string session.
    ```markdown
    git clone https://github.com/StarkBotsIndustries/StringSessionBot
    ```
-2. Get a DB_URI. If you don't know how, deploy using Heroku Button only or delete database things as it's not a compulsion.
+2. Get a DB_URL. If you don't know how, deploy using Heroku Button only or delete database things as it's not a compulsion.
    
 3. Rename `.env.sample` to `.env` and fill the needed variables
 
@@ -45,7 +45,7 @@ Telegram bot to generate pyrogram and telethon string session.
 - `API_ID` - Get this from [my.telegram.org](https://my.telegram.org/auth)
 - `API_HASH` - Get this from [my.telegram.org](https://my.telegram.org/auth)
 - `BOT_TOKEN` - Get this from [@BotFather](https://t.me/BotFather)
-- `DB_URI` - Will be automatically added by Heroku.
+- `DB_URL` - Will be automatically added by Heroku.
 - `MUST_JOIN` - Username/ID of your telegram channel/group.
 - `AUTH_USERS` - ID of users which will be able to broadcast.
 

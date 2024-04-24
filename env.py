@@ -6,7 +6,7 @@ load_dotenv()
 API_ID = os.getenv("API_ID", "").strip()
 API_HASH = os.getenv("API_HASH", "").strip()
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
-DB_URI = os.getenv("DB_URI", "").strip()
+DB_URL = os.getenv("DB_URL", "").strip()
 MUST_JOIN = os.getenv("MUST_JOIN", "")
 AUTH_USERS = set(int(x) for x in os.getenv("AUTH_USERS", "").split())
 
@@ -19,8 +19,8 @@ if not API_HASH:
 if not BOT_TOKEN:
     print("No BOT_TOKEN found. Exiting...")
     raise SystemExit
-if not DB_URI:
-    print("No DB_URI found. Exiting...")
+if not DB_URL:
+    print("No DB_URL found. Exiting...")
     raise SystemExit
 if not AUTH_USERS:
     print("No AUTH_USERS found. Exiting...")
@@ -32,5 +32,5 @@ except ValueError:
     print("API_ID is not a valid integer. Exiting...")
     raise SystemExit
 
-if 'postgres' in DB_URI and 'postgresql' not in DB_URI:
-    DB_URI = DB_URI.replace("postgres", "postgresql")
+if 'postgres' in DB_URL and 'postgresql' not in DB_URL:
+    DB_URL = DB_URL.replace("postgres", "postgresql")

@@ -1,29 +1,32 @@
-#  !/usr/bin/env python3
-#  -*- coding: utf-8 -*-
-#  Name     : broadcast-bot [ Telegram ]
-#  Repo     : https://github.com/m4mallu/broadcast-bot
-#  Author   : Renjith Mangal [ https://t.me/space4renjith ]
-#  Licence  : GPL-3
-
 import asyncio
-from StringSessionBot.db.sql import query_msg
+import logging
 from pyrogram.errors import FloodWait
 from pyrogram import enums
+from StringSessionBot.db.sql import query_msg, del_user
+
+logging.basicConfig(
+    level=logging.WARNING, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+LOGGER = logging.getLogger(__name__)
 
 async def users_info(bot):
     users = 0
     blocked = 0
     identity = await query_msg()
-    for id in identity:
+    for user in identity:
+        user_id = int(user[0])
         name = bool()
         try:
-            name = await bot.send_chat_action(int(id[0]), enums.ChatAction.TYPING)
+            name = await bot.send_chat_action(user_id, enums.ChatAction.TYPING)
         except FloodWait as e:
-            await asyncio.sleep(e.x)
+            await asyncio.sleep(e.value)
         except Exception:
             pass
         if bool(name):
             users += 1
         else:
+            await del_user(user_id)
+            LOGGER.info("Deleted user id %s from broadcast list", user_id)
             blocked += 1
     return users, blocked
+
