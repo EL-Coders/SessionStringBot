@@ -1,14 +1,24 @@
 from pyrogram import Client, filters
-from pyrogram.errors import (ApiIdInvalid, PasswordHashInvalid,
-                             PhoneCodeExpired, PhoneCodeInvalid,
-                             PhoneNumberInvalid, SessionPasswordNeeded)
-from pyrogram.errors.exceptions.bad_request_400 import PhoneNumberBanned
+from pyrogram.errors import (
+    ApiIdInvalid,
+    PasswordHashInvalid,
+    PhoneCodeExpired,
+    PhoneCodeInvalid,
+    PhoneNumberInvalid,
+    SessionPasswordNeeded,
+    PhoneNumberBanned,
+    PhonePasswordFlood,
+)
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from telethon import TelegramClient
-from telethon.errors import (ApiIdInvalidError, PasswordHashInvalidError,
-                             PhoneCodeExpiredError, PhoneCodeInvalidError,
-                             PhoneNumberInvalidError,
-                             SessionPasswordNeededError)
+from telethon.errors import (
+    ApiIdInvalidError,
+    PasswordHashInvalidError,
+    PhoneCodeExpiredError,
+    PhoneCodeInvalidError,
+    PhoneNumberInvalidError,
+    SessionPasswordNeededError,
+)
 from telethon.sessions import StringSession
 
 from data import Data
@@ -119,6 +129,9 @@ async def generate_session(
         return
     except PhoneNumberBanned:
         await msg.reply("`PHONE_NUMBER` is banned, please try with another number.")
+        return
+    except PhonePasswordFlood:
+        await msg.reply("Unable to send code, you have tried logging in too many times.")
         return
     try:
         phone_code_msg = None
