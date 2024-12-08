@@ -1,4 +1,4 @@
-# Pyrogram and Telethon String Session Bot [@SessionStringELBot](https://t.me/SessionStringELBot)
+# Pyrogram and Telethon String Session Bot [@SessionStringzBot](https://t.me/SessionStringZBot)
 
 > A star ⭐ from you means a lot to us!
 
@@ -10,44 +10,37 @@ Telegram bot to generate pyrogram and telethon string session.
 
 ## Usage
 
-### Deploy to Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/)
-
-1. Tap on above button and fill `API_ID`, `API_HASH`, `BOT_TOKEN` (and `MUST_JOIN`).
-2. Then tap "Deploy App" below it. Wait till deploying is complete (will take atmost 2 minutes).
-3. After deploying is complete, tap on "Manage App"
-4. Check the logs to see if your bot is ready!
 
 ### Local Deploying
 
 1. Clone the repo
    ```markdown
-   git clone https://github.com/StarkBotsIndustries/StringSessionBot
+   git clone https://github.com/EL-Coders/SessionStringBot
    ```
-2. Get a DB_URL. If you don't know how, deploy using Heroku Button only or delete database things as it's not a compulsion.
-   
-3. Rename `.env.sample` to `.env` and fill the needed variables
+2. Create SQL DB_URL.
 
-4. Enter the directory
+3. Enter the directory
    ```markdown
    cd StringSessionBot
    ```
+   
+4. Rename `.env.sample` to `.env` and fill the needed variables
+
 5. Run the file
    ```markdown
-   python3 generator.py
+   python3 -m ssnbot
    ```
 
 ## Environment Variables
 
 #### Mandatory Vars
 
-- `API_ID` - Get this from [my.telegram.org](https://my.telegram.org/auth)
+- `APP_ID` - Get this from [my.telegram.org](https://my.telegram.org/auth)
 - `API_HASH` - Get this from [my.telegram.org](https://my.telegram.org/auth)
 - `BOT_TOKEN` - Get this from [@BotFather](https://t.me/BotFather)
 - `DB_URL` - Will be automatically added by Heroku.
 - `MUST_JOIN` - Username/ID of your telegram channel/group.
-- `AUTH_USERS` - ID of users which will be able to broadcast.
+- `ADMINS` - ID of users which will be able to broadcast.
 
 ## Functions
 
@@ -60,7 +53,7 @@ Telegram bot to generate pyrogram and telethon string session.
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ## Credits
-
+- [Stark Bots](https://github.com/StarkBotsIndustries) for [StringSessionBot](https://github.com/StarkBotsIndustries/StringSessionBot) repo
 - [Dan Tès](https://github.com/delivrance) for his [Pyrogram](https://docs.pyrogram.org) Library
 - [Lonami](https://github.com/Lonami) for his [Telethon](https://docs.telethon.dev) Library
 - [aylak](https://t.me/ayIak) for **Telethon** idea of [v1.0.0]

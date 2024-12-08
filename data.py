@@ -22,7 +22,7 @@ class Data:
     ]
 
     START = """
-Hey {}
+**Hey {}
 
 Welcome to {}
 
@@ -31,9 +31,9 @@ If you don't trust this bot,
 > Delete this chat
 
 Still reading?
-You can use me to generate pyrogram (even version 2) and telethon string session. Use below buttons to learn more !
+You can use me to generate Pyrogram and Telethon string session. Use below buttons to learn more !
 
-By @ELUpdates
+By @ELUpdates**
     """
 
     HELP = """
@@ -58,5 +58,5 @@ Framework : [Pyrogram](https://docs.pyrogram.org)
 
 Language : [Python](https://www.python.org)
 
-Developer : @CoderEL
+Developer : @CoderELAlpha
     """

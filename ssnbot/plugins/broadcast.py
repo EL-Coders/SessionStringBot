@@ -2,15 +2,15 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
-from env import AUTH_USERS
-from StringSessionBot.db.sql import query_msg
-from StringSessionBot.db.support import users_info
+from ssnbot import ADMINS
+from ssnbot.db.sql import query_msg
+from ssnbot.db.support import users_info
 
 
 @Client.on_message(filters.private & filters.command("stats"))
 async def get_subscribers_count(bot: Client, message: Message):
     user_id = message.from_user.id
-    if user_id not in AUTH_USERS:
+    if user_id not in ADMINS:
         return
     wait_msg = "__Calculating, please wait...__"
     msg = await message.reply_text(wait_msg)
@@ -22,7 +22,7 @@ async def get_subscribers_count(bot: Client, message: Message):
 @Client.on_message(filters.private & filters.command("broadcast"))
 async def send_text(bot, message: Message):
     user_id = message.from_user.id
-    if user_id not in AUTH_USERS:
+    if user_id not in ADMINS:
         return
 
     if "broadcast" in message.text and message.reply_to_message is not None:

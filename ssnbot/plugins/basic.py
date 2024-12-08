@@ -1,7 +1,7 @@
 from data import Data
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, Message
-from StringSessionBot.db.sql import add_user, query_msg
+from pyrogram.types import InlineKeyboardMarkup, Message, LinkPreviewOptions
+from ssnbot.db.sql import add_user, query_msg
 
 
 def filter(cmd: str):
@@ -41,6 +41,7 @@ async def about(bot: Client, msg: Message):
     await bot.send_message(
         msg.chat.id,
         Data.ABOUT,
-        disable_web_page_preview=True,
+        # disable_web_page_preview=True,
+        link_preview_options=LinkPreviewOptions(is_disabled=True),
         reply_markup=InlineKeyboardMarkup(Data.home_buttons),
     )

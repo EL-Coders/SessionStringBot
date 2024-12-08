@@ -1,13 +1,9 @@
 import asyncio
-import logging
 from pyrogram.errors import FloodWait
 from pyrogram import enums
-from StringSessionBot.db.sql import query_msg, del_user
+from ssnbot.db.sql import query_msg, del_user
+from ssnbot import LOGGER
 
-logging.basicConfig(
-    level=logging.WARNING, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-LOGGER = logging.getLogger(__name__)
 
 async def users_info(bot):
     users = 0
