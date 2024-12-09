@@ -1,4 +1,5 @@
 import asyncio
+from asyncio.exceptions import TimeoutError
 from pyrogram import Client, filters
 from pyrogram.errors import (
     ApiIdInvalid,
@@ -66,7 +67,6 @@ async def generate_session(
         return
 
     if await cancelled(api_id_msg):
-        await bot.cancel_message_listener(chat_id=user_id)
         return
 
     try:
@@ -87,7 +87,6 @@ async def generate_session(
         await msg.reply_text("Request timed out, please try again with /start")
         return
     if await cancelled(api_hash_msg):
-        await bot.cancel_message_listener(chat_id=user_id)
         return
 
     api_hash = api_hash_msg.text
@@ -103,8 +102,8 @@ async def generate_session(
     except TimeoutError:
         await msg.reply_text("Request timed out, please try again with /start")
         return
+    
     if await cancelled(phone_number_msg):
-        await bot.cancel_message_listener(chat_id=user_id)
         return
 
     phone_number = phone_number_msg.text
